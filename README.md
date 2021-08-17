@@ -26,7 +26,7 @@ ZA内只有针对接口与实体类的注解与相关工具的包,所以**需要
 
 ---
 
-# 1. [DEMO](https://github.com/342535324/ZA_DEMO) 
+# 1. [DEMO(github)](https://github.com/342535324/ZA_DEMO)/[DEMO(gitee)](https://gitee.com/mingyannu/ZA_DEMO)
 
 ---
 
