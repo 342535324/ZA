@@ -36,7 +36,6 @@
 > | @ZA_InterfaceNotesParameter | 接口的方法 | 接口参数注解,每个注解对应一个接口的参数,包含这个参数的名称,类型,说明,默认值                                                                             |
 ---
 > 在 SpringMVC 下的用法举例:
-
 > ```
 > @Controller
 > @RequestMapping("/main")
