@@ -26,7 +26,7 @@ ZA内只有针对接口与实体类的注解与相关工具的包,所以**需要
 
 ---
 
-# 1. [DEMO(github)](https://github.com/342535324/ZA_DEMO)/[DEMO(gitee)](https://gitee.com/mingyannu/ZA_DEMO)
+# 1. [DEMO(github)](https://github.com/342535324/ZA_DEMO)/[DEMO(gitee)](https://github.com/342535324/ZA_DEMO)
 
 ---
 
@@ -40,11 +40,10 @@ ZA内只有针对接口与实体类的注解与相关工具的包,所以**需要
 
 3.1.针对接口的注解
 >
-| 注解名称                    | 作用对象   | 注解说明  |
-| -- | - | - |
-| @ZA_InterfaceNotes          | 接口的方法 | 接口注解,用于标注这个接口的名称,接口类型,返回值(返回值可以用 returnContent 属性作为文本说明,也可以用 returnObjectUrl 属性填写实体类 URL),时间(用于排序) |
-| @ZA_InterfaceNotesParameter | 接口的方法 | 接口参数注解,每个注解对应一个接口的参数,包含这个参数的名称,类型,说明,默认值 |
-
+| 注解名称                    | 作用对象   | 注解说明                                                                                                                                                |
+|  | - | - |
+| [@ZA_InterfaceNotes ](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/testUtil/annotation/ZA_InterfaceNotes.java)         | 接口的方法 | 接口注解,用于标注这个接口的名称,接口类型,返回值(返回值可以用 returnContent 属性作为文本说明,也可以用 returnObjectUrl 属性填写实体类 URL),时间(用于排序) |
+| [@ZA_InterfaceNotesParameter](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/testUtil/annotation/ZA_InterfaceNotesParameter.java) | 接口的方法 | 接口参数注解,每个注解对应一个接口的参数,包含这个参数的名称,类型,说明,默认值                                                                             |
 
 在 SpringMVC 下的用法举例:
 ```
@@ -71,13 +70,13 @@ public class MainController {
 >
 | 注解名称       | 作用对象   | 注解说明                                             |
 | -- | - | - |
-| @ZA_IsAccount  | 实体类属性 | 账号校验,包含错误提示信息,最小长度,最大长度 3 个属性 |
-| @ZA_IsEMail    | 实体类属性 | 邮箱校验,包含错误提示信息                            |
-| @ZA_IsIdCard   | 实体类属性 | 身份证校验,包含错误提示信息                          |
-| @ZA_IsInt      | 实体类属性 | 整数校验,包含错误提示信息                            |
-| @ZA_IsPassword | 实体类属性 | 密码校验,包含错误提示信息,最小长度,最大长度 3 个属性 |
-| @ZA_IsPhone    | 实体类属性 | 手机号码校验,包含错误提示信息                        |
-| @ZA_NotNull    | 实体类属性 | 非空校验,包含错误提示信息                            |
+| [@ZA_IsAccount](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/annotation/ZA_IsAccount.java)  | 实体类属性 | 账号校验,包含错误提示信息,最小长度,最大长度 3 个属性 |
+| [@ZA_IsEMail](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/annotation/ZA_IsEMail.java)    | 实体类属性 | 邮箱校验,包含错误提示信息                            |
+| [@ZA_IsIdCard](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/annotation/ZA_IsIdCard.java)   | 实体类属性 | 身份证校验,包含错误提示信息                          |
+| [@ZA_IsInt](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/annotation/ZA_IsInt.java)      | 实体类属性 | 整数校验,包含错误提示信息                            |
+| [@ZA_IsPassword](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/annotation/ZA_IsPassword.java) | 实体类属性 | 密码校验,包含错误提示信息,最小长度,最大长度 3 个属性 |
+| [@ZA_IsPhone](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/annotation/ZA_IsPhone.java)    | 实体类属性 | 手机号码校验,包含错误提示信息                        |
+| [@ZA_NotNull](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/annotation/ZA_NotNull.java)    | 实体类属性 | 非空校验,包含错误提示信息                            |
 
 
 实体类属性校验的 DEMO:
@@ -118,7 +117,7 @@ public class Demo {
 
 # **4.工具类介绍**
 
-### ZAUtil
+### [ZAUtil](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/check/util/ZAUtil.java)
 ###### 实体类相关工具类：
 | 方法名称   | 作用                                   |
 | - | -- |
@@ -126,13 +125,13 @@ public class Demo {
 | initObject | 读取类所有属性 将其基本属性进行初始化赋值(不会覆盖已有的值,仅针值为null的属性进行操作) |
 | ObjectContrast | 读取2个obj的所有属性 将属性的值转成字符串,然后进行对比 如果所有属性一致则返回true |
 
-### ZACreateHtml
+### [ZACreateHtml](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/testUtil/util/ZACreateHtml.java)
 ###### 通过接口注解(@ZA_InterfaceNotes,@ZA_InterfaceNotesParameter)生成HTML的工具类：
 | 方法名称   | 作用                                   |
 | - | -- |
 | createInterfaceHTML | 根据传入的接口对象数组生成接口文档 |
 
-### ZACreateParameterUtil
+### [ZACreateParameterUtil](https://github.com/342535324/ZA/blob/main/src/com/rs/core/za/testUtil/util/ZACreateParameterUtil.java)
 ##### 是接口文档的参数生成工具类,它会在ZAInterfaceNotesEntity对象被初始化的时候调用,根据参数类型和名称生成默认值
 ###### 如果需要自定义参数生成规则可以在ZACreateParameterUtil里面新增方法,如:
 ```
